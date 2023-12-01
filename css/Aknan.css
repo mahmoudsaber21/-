@@ -1,0 +1,374 @@
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #0183a5;
+}
+/* استخدام وحدة القياس النسبية (rem) لحجم الكلمات */
+body {
+    font-size: 16px; /* تحديد حجم الخط الأساسي */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5rem; /* حجم العناوين */
+}
+
+p {
+    font-size: 1rem; /* حجم النص العادي */
+}
+
+/* ضبط حجم الأزرار باستخدام وحدة القياس النسبية */
+.button {
+    font-size: 1rem; /* حجم النص داخل الأزرار */
+    padding: 0.5rem 1rem; /* تعديل حجم الحواف */
+}
+
+/* ضبط حجم الصور باستخدام وحدة القياس النسبية */
+img {
+    max-width: 100%; /* لتناسب عرض الصور مع حجم الشاشة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+/* الهيدر */
+header {
+    background-color: #ffffff;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    z-index: 999; /* تحديد ترتيب الطبقات ليكون الهيدر فوق العناصر الأخرى */
+    height: 120px; 
+}
+/* تنسيق زر العربة */
+.cart-button {
+    float: right;  /*لتحديد موقعه على اليمين في الهيدر */
+    /* أي تنسيقات إضافية تريدها لزر العربة */
+}
+/* للشاشات الصغيرة */
+@media screen and (max-width: 767px) {
+    header {
+        padding: 10px;
+    }
+    
+    .navigation {
+        display: none;
+    }
+
+    .hashtag {
+        display: block;
+    }
+
+    .cart-button {
+        margin-right: 0;
+    }
+}
+
+/* للشاشات المتوسطة والكبيرة */
+@media screen and (min-width: 768px) {
+    /* تعديلات للهيدر على الشاشات المتوسطة والكبيرة */
+    .hashtag {
+        display: none;
+    }
+}
+/* اللوجو */
+.logo img {
+    max-width: 150px;
+}
+
+/* الأزرار في الهيدر */
+.navigation {
+    margin-right: 20px;
+}
+
+.navigation button {
+    background-color: #0183a5; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.navigation :last-child{
+    margin-right: 60px;
+}
+/* هشتاج #أكنان أحسن_اختيار */
+.hashtag {
+    font-size: 30px;
+    color: #0183a5; /* لون النص */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hashtag p {
+    margin: 0;
+}
+
+/* محتوى المنتجات */
+.products {
+    padding-top: 100px; /* ليبدأ عرض المحتوى بعد الهيدر الثابت */
+}
+/* إعدادات CSS العامة */
+
+/* الصفوف */
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* تباعد بين الصفوف */
+}
+
+/* النموذج الأساسي لعنصر المنتج */
+.product {
+    width: calc(25% - 10px); /* 25% لأربعة منتجات في الصف */
+    margin-bottom: 20px; /* تباعد بين المنتجات */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 4px solid #ffb300; 
+    margin-right:1%; 
+    margin-left: 1%;
+}
+
+
+/* للشاشات الصغيرة */
+@media screen and (max-width: 767px) {
+    .product {
+        width: calc(50% - 10px); /* عرض المنتج بنسبة 50% لشاشات الهواتف */
+    }
+}
+
+/* للشاشات المتوسطة */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .product {
+        width: calc(33.33% - 10px); /* عرض المنتج بنسبة 33.33% للشاشات المتوسطة */
+    }
+}
+
+/* للشاشات الكبيرة */
+@media screen and (min-width: 1024px) {
+    .product {
+        width: calc(25% - 10px); /* عرض المنتج بنسبة 25% للشاشات الكبيرة */
+    }
+}
+/* إخفاء القائمة في البداية */
+.header-menu {
+    display:none;
+}
+
+/* زر القائمة المنسدلة */
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* تحديد شكل الأشرطة الثلاثة */
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #333;
+    margin: 5px 0;
+}
+/* تعريف الأسلوب الافتراضي للأزرار */
+.header-buttons {
+    display: none; /* بشكل افتراضي: مخفي */
+}
+
+
+/* استهداف الشاشات الصغيرة لإظهار الأزرار والنقاط */
+@media screen and (max-width: 767px) {
+    .header-buttons {
+        display: flex; /* إظهار الأزرار */
+    }
+
+    .menu-toggle {
+        display: flex; /* إظهار النقاط */
+    }
+}
+
+/* عرض القائمة عند النقر */
+.menu-active .header-menu {
+    display: block;
+}
+/* تعريف وسيطة الاستعلام للشاشات الكبيرة */
+@media only screen and (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* إخفاء النقاط عندما تظهر الأزرار */
+    }
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    height: 350px; /* تحديد ارتفاع الصورة */
+    width: 100%;
+}
+
+.product-image img {
+    transition: transform 0.3s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* أسود مع شفافية 40% */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay-content {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.1); /* تكبير الصورة */
+}
+
+.product-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.product-image:hover .overlay-content {
+    opacity: 1;
+}
+
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* تفاصيل المنتج */
+.product-details {
+    padding: 30px;
+    direction: rtl; /* تغيير اتجاه الكتابة إلى اليمين */
+}
+
+.product-details h3 {
+    margin-bottom: 10px;
+    direction: rtl; /* استعادة اتجاه الكتابة للنص الرئيسي إلى اليسار */
+    font-size: 21px;
+}
+.product-details p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.button1,
+.button2 {
+    background-color: #0183a5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 5px; /* مسافة بين الأزرار */
+}
+
+
+
+
+.product-details button:hover {
+    transform: scale(1.1); /* تكبير الزر عند التحويب */
+}
+
+
+.product-details p {
+    margin-bottom: 8px;
+}
+
+.product-details button {
+    background-color: #0183a5;
+    color: #ffffff;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    display: inline-block; /* عرض الأزرار بجانب بعضها */
+    margin-right: 10px; /* مسافة بين الأزرار */
+    transition: transform 0.3s ease; /* تأثير الانتقال */
+}
+/* تنسيق جملة Sold Out */
+.sold-out {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.7); /* يمكنك تغيير اللون هنا */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none; /* يكون مخفيًا في البداية */
+    width: 100%;
+    text-align: center;
+}
+
+.product .sold-out {
+    display: block; /* عرضه عند تحويم الماوس فوق المنتج */
+}
+
+
+/* زر لعرض المزيد من المنتجات */
+.load-more {
+    text-align: center;
+    padding: 20px;
+}
+
+.load-more button {
+    background-color: #0183a5; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* الفوتر */
+footer {
+    background-color: #eaa548; /* لون الخلفية */
+    color: #0183a5; /* لون النص */
+    text-align: center;
+    padding: 20px;
+}
+/* تغيير حجم الأيقونات وتنسيقها */
+.social-icons a {
+    margin-right: 10px; /* تباعد بين الروابط */
+    font-size: 28px; /* حجم الأيقونات */
+    color: #333; /* لون الأيقونات */
+}
+
+/* تغيير لون الأيقونات عند التحويل (hover) */
+.social-icons a:hover {
+    color: #FFA500; /* لون عند التحويل */
+}
+
